@@ -1,0 +1,16 @@
+.btn
+  padding: 0.75em 1.5em;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  &:link, &:visited
+    text-decoration: none;
+
+.btn-primary
+  @extend .btn;
+  border: 1px solid white;
+  color: white;
+
+.btn-standout
+  @extend .btn;
+  @extend .gradient;
+  color: white;
