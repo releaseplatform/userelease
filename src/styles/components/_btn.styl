@@ -7,11 +7,20 @@
 
 .btn-primary
   @extend .btn;
-  border: 2px solid white;
+  -webkit-box-shadow:inset 0px 0px 0px 2px #fff;
+  -moz-box-shadow:inset 0px 0px 0px 2px #fff;
+  box-shadow:inset 0px 0px 0px 2px #fff;
   color: white;
+  transition: all .2s;
+  &:hover
+    background: #fff;
+    color: #111;
 
 .btn-standout
   @extend .btn;
   @extend .gradient;
-  @extend .br-gradient;
   color: white;
+  opacity: 0.8;
+  transition: all .2s;
+  &:hover
+    opacity: 1;
