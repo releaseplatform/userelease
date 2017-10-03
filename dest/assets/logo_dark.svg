@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="204px" height="27px" viewBox="0 0 204 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>logo_dark</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="98.6387915%" y1="1.36120855%" x2="0%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF3F2C" offset="0%"></stop>
+            <stop stop-color="#FF3AB5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="landing_page-copy-10" transform="translate(-116.000000, -5166.000000)">
+            <text id="RELEASE" font-family="FabrikTrial-Regular, Fabrik Trial" font-size="35.380798" font-weight="normal" letter-spacing="2.21129996" fill="#292929">
+                <tspan x="164.777101" y="5192">RELEASE</tspan>
+            </text>
+            <polyline id="Line" stroke="url(#linearGradient-1)" stroke-width="4.02456592" stroke-linecap="square" points="122 5182.0614 135.267799 5174.6904 148.535598 5182.0614"></polyline>
+        </g>
+    </g>
+</svg>

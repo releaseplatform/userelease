@@ -1,0 +1,35 @@
+.bg-white a:link, .bg-white a:visited
+  @extend .ur-blue-black;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all .2s;
+
+.bg-white a:hover, .bg-white a:active
+  @extend .ur-blue-black;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0,0,0,0.5);
+  transition: all .2s;
+
+a:link img
+  border: 0;
+
+// .hero a:link, .hero a:visited
+//   color: white;
+//   text-decoration: none;
+//   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+.lk1
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  transition: all .2s;
+  &:hover
+      border-color: rgba(255, 255, 255, 0.5);
+
+.lk2
+  @extend .ur-blue-black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: all .2s;
+  &:hover
+      border-color: rgba(0, 0, 0, 0.5);
