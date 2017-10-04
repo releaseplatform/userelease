@@ -1,4 +1,16 @@
  .testimonial-block
   overflow: hidden;
+  height: auto;
   @media screen and (min-width: $bp-s)
-    max-height: 350px;
+    height: 275px;
+  @media screen and (min-width: $bp-l)
+    height: 450px;
+
+.testimonial-img
+  background: url('../assets/caner_bg.jpg');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: 200px;
+  @media screen and (min-width: $bp-s)
+    height: 100%;
