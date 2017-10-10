@@ -3,6 +3,7 @@
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
   font-size: 1em;
+  border: 0;
   &:link, &:visited
     text-decoration: none;
   @media screen and (max-width: $bp-s)
@@ -19,6 +20,21 @@
   &:hover
     background: #fff;
     color: #111;
+
+.btn-secondary
+  @extend .btn;
+  -webkit-box-shadow:inset 0px 0px 0px 2px #414141;
+  -moz-box-shadow:inset 0px 0px 0px 2px #414141;
+  box-shadow:inset 0px 0px 0px 2px #414141;
+  color: #414141;
+  transition: all .2s;
+  border-bottom: 0;
+  opacity: 0.7;
+  &:hover
+    opacity: 1;
+    background: #fff;
+    color: #111;
+
 
 .btn-standout
   @extend .btn;
