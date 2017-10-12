@@ -1,27 +1,45 @@
-var clipboard = require('clipboard');
 var $ = require('jquery');
 
-$(document).ready(function(){
-	$('.c-modal-trigger').click(function(e){
-    e.preventDefault();
-    $('.c-modal-overlay').show();
-    $('.c-modal-container').addClass('anim-floatUp');
-  });
-  $('.c-modal-close a').click(function(e){
-    e.preventDefault();
-    $('.c-modal-overlay').hide();
-  });
-});
+// carousel
+// Needs to take a list of elements from the dom
+// remove all but the first n
+// ever m milliseconds remove the first and insert a new one a the end
+// Do this in a circular bufferd fasion
 
-new Clipboard('#referral-url', {
-  // called when clip board target '.btn-copy' is clicked
-  // lets you set the actual target to a different element, e.g. the link
-  target: function (trigger) {
-    return trigger;
-  },
-  // called when clip board target '.btn-copy' is clicked
-  // lets you set the text that is put in the clip board
-  text: function (trigger) {
-    return document.getElementById('referral-url').innerHTML + '&fromjs=true';
-  }
-});
+
+function carousel(selector, milliseconds) {
+  var carousel = (function Carousel(selector, milliseconds) {
+    self = {};
+
+    self.marquee = $(selector);
+    self.buffer = self.marquee.children().toArray();
+    self.containerWidth = () => self.marquee.width();
+    self.nextElement = () => $(self.buffer.slice(-1).pop());
+    self.displayedWidth = () => self.marquee.children().toArray().reduce((s,e) => $(e).outerWidth(true) + s, 0);
+
+    self.bufferElement = () => self.buffer.unshift(self.marquee.children().first().remove());
+    self.updateDisplayed = function () {
+      self.buffer.forEach(function (el) {
+        if (self.displayedWidth() < self.containerWidth()) {
+          var el = self.buffer.pop();
+          self.marquee.append(el);
+        }
+        else if (self.displayedWidth() > self.containerWidth()) {
+          self.bufferElement();
+        }
+      });
+    };
+
+    self.interval = setInterval(function () {
+      self.bufferElement();
+      self.updateDisplayed();
+    }, milliseconds);
+
+    self.marquee.empty();
+    return self;
+  })(selector, milliseconds);
+
+  carousel.updateDisplayed();
+}
+
+carousel('.marquee', 2000);

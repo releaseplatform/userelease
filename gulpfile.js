@@ -10,25 +10,20 @@ var gulp = require('gulp'),
 gulp.task('styles', function(){
 	return gulp.src('src/styles/style.styl')
 	.pipe(stylus({
-		compress: true
+          compress: true,
+          include: [
+            './node_modules/../'
+          ],
+          "include css": true
 	}))
 	.pipe(gulp.dest('dest/styles'))
 	.pipe(livereload());
 });
 
-// gulp.task('js', function(){
-// 	return browserify('./src/scripts/main.js')
-// 	.bundle()
-// 	.pipe(source('main.js'))
-// 	.pipe(gulp.dest('dest/scripts'));
-// });
 
 gulp.task('js', function(){
 	return browserify('./src/scripts/main.js')
 	.bundle()
-	// .on('error', function(e){
-	// 	gutil.log(e);
-	// })
 	.pipe(source('main.js'))
 	.pipe(gulp.dest('dest/scripts'));
 });
